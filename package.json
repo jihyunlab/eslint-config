@@ -1,0 +1,29 @@
+{
+  "name": "@jihyunlab/eslint-config",
+  "version": "1.0.0",
+  "description": "JihyunLab ESLint config for TypeScript.",
+  "license": "MIT",
+  "author": "JihyunLab <jihyunlab@gmail.com>",
+  "contributors": [
+    "Philjung Yun <philjung.yun@gmail.com>",
+    "Donghyun Kim <naokinaoki1225@gmail.com>"
+  ],
+  "homepage": "https://github.com/jihyunlab/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jihyunlab/eslint-config"
+  },
+  "scripts": {},
+  "peerDependencies": {
+    "eslint": "^8.34.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint-config-prettier": "^8.6.0"
+  },
+  "keywords": [
+    "jihyunlab",
+    "eslint",
+    "eslint-config",
+    "typescript"
+  ]
+}
