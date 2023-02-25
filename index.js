@@ -287,11 +287,6 @@ module.exports = {
         next: ["const", "let", "var"],
       },
       {
-        blankLine: "always",
-        prev: ["case", "default"],
-        next: "*",
-      },
-      {
         blankLine: "any",
         prev: ["const", "let", "var"],
         next: ["const", "let", "var"],
