@@ -181,12 +181,7 @@ module.exports = {
     "@typescript-eslint/no-loop-func": "off",
     "@typescript-eslint/no-loss-of-precision": "off",
     "@typescript-eslint/no-magic-numbers": "off",
-    "@typescript-eslint/no-redeclare": [
-      "error",
-      {
-        builtinGlobals: false,
-      },
-    ],
+    "@typescript-eslint/no-redeclare": "off",
     "@typescript-eslint/no-restricted-imports": "off",
     "@typescript-eslint/no-shadow": "off",
     "@typescript-eslint/no-throw-literal": "off",
