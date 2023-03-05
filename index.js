@@ -40,7 +40,7 @@ module.exports = {
       },
       {
         selector: "typeLike",
-        format: ["PascalCase"],
+        format: ["PascalCase", "UPPER_CASE"],
       },
     ],
     "@typescript-eslint/no-base-to-string": "off",
