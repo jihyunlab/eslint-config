@@ -273,11 +273,6 @@ module.exports = {
       "error",
       {
         blankLine: "always",
-        prev: ["const", "let", "var"],
-        next: "*",
-      },
-      {
-        blankLine: "always",
         prev: "*",
         next: ["const", "let", "var"],
       },
