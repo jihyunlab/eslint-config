@@ -211,11 +211,11 @@ module.exports = {
     "@typescript-eslint/comma-dangle": [
       "error",
       {
-        arrays: "always-multiline",
-        objects: "always-multiline",
+        arrays: "never",
+        objects: "never",
         imports: "never",
         exports: "never",
-        functions: "never",
+        functions: "ignore",
       },
     ],
     "@typescript-eslint/comma-spacing": [
@@ -269,24 +269,7 @@ module.exports = {
         objectsInObjects: true,
       },
     ],
-    "@typescript-eslint/padding-line-between-statements": [
-      "error",
-      {
-        blankLine: "always",
-        prev: "*",
-        next: ["const", "let", "var"],
-      },
-      {
-        blankLine: "any",
-        prev: ["const", "let", "var"],
-        next: ["const", "let", "var"],
-      },
-      {
-        blankLine: "any",
-        prev: "*",
-        next: "return",
-      },
-    ],
+    "@typescript-eslint/padding-line-between-statements": "off",
     "@typescript-eslint/quotes": ["error", "single"],
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/space-before-blocks": [
