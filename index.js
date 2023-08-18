@@ -242,12 +242,6 @@ module.exports = {
         after: true,
       },
     ],
-    "@typescript-eslint/lines-between-class-members": [
-      "error",
-      {
-        exceptAfterOverload: true,
-      },
-    ],
     "@typescript-eslint/member-delimiter-style": [
       "error",
       {
