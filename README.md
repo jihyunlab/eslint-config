@@ -9,7 +9,7 @@ JihyunLab ESLint config for TypeScript.
 ### 1) Setup regular JihyunLab ESLint config
 
 ```bash
-npm install --save-dev @jihyunlab/eslint-config
+npm i --save-dev @jihyunlab/eslint-config
 ```
 
 or
@@ -95,7 +95,7 @@ Within your .vscode/extensions.json file:
 ### 1) When a peer dependencies package is not installed
 
 ```bash
-npm install --save-dev eslint@^8.34.0 @typescript-eslint/eslint-plugin@^5.52.0 @typescript-eslint/parser@^5.52.0 eslint-config-prettier@^8.6.0
+npm i --save-dev eslint@^8.34.0 @typescript-eslint/eslint-plugin@^5.52.0 @typescript-eslint/parser@^5.52.0 eslint-config-prettier@^8.6.0
 ```
 
 ### 2) Conflict between ESLint and Prettier configs
@@ -143,7 +143,7 @@ https://typescript-eslint.io/linting/troubleshooting/
 
 ## Credits
 
-Authored and maintained by JihyunLab <<jihyunlab@gmail.com>>
+Authored and maintained by JihyunLab <<info@jihyunlab.com>>
 
 ## License
 
