@@ -1,6 +1,6 @@
 {
   "name": "@jihyunlab/eslint-config",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "JihyunLab ESLint config for TypeScript.",
   "license": "MIT",
   "author": "JihyunLab <info@jihyunlab.com> (https://jihyunlab.com)",
@@ -15,7 +15,6 @@
     "eslint-config-prettier": ">=8.0.0"
   },
   "keywords": [
-    "jihyunlab",
     "eslint",
     "eslint-config",
     "typescript"
