@@ -168,7 +168,7 @@ export const jihyunlabEslintConfig = [
       '@typescript-eslint/prefer-as-const': 'error',
       '@typescript-eslint/prefer-destructuring': 'off',
       '@typescript-eslint/prefer-enum-initializers': 'error',
-      '@typescript-eslint/prefer-find': 'error',
+      '@typescript-eslint/prefer-find': 'off',
       '@typescript-eslint/prefer-for-of': 'off',
       '@typescript-eslint/prefer-function-type': 'error',
       '@typescript-eslint/prefer-includes': 'off',
