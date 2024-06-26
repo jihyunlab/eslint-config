@@ -1,145 +1,60 @@
 # @jihyunlab/eslint-config
 
-[![Version](https://img.shields.io/npm/v/@jihyunlab/eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/@jihyunlab/eslint-config?activeTab=versions) [![Downloads](https://img.shields.io/npm/dt/@jihyunlab/eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/@jihyunlab/eslint-config) [![Last commit](https://img.shields.io/github/last-commit/jihyunlab/eslint-config.svg?style=flat-square)](https://github.com/jihyunlab/eslint-config/graphs/commit-activity) [![License](https://img.shields.io/github/license/jihyunlab/eslint-config.svg?style=flat-square)](https://github.com/jihyunlab/eslint-config/blob/master/LICENSE)
+[![Version](https://img.shields.io/npm/v/@jihyunlab/eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/@jihyunlab/eslint-config?activeTab=versions) [![Downloads](https://img.shields.io/npm/dt/@jihyunlab/eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/@jihyunlab/eslint-config) [![Last commit](https://img.shields.io/github/last-commit/jihyunlab/eslint-config.svg?style=flat-square)](https://github.com/jihyunlab/eslint-config/graphs/commit-activity) [![License](https://img.shields.io/github/license/jihyunlab/eslint-config.svg?style=flat-square)](https://github.com/jihyunlab/eslint-config/blob/master/LICENSE) [![Linter](https://img.shields.io/badge/linter-eslint-blue?style=flat-square)](https://eslint.org) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)\
+[![Build](https://github.com/jihyunlab/eslint-config/actions/workflows/build.yml/badge.svg)](https://github.com/jihyunlab/eslint-config/actions/workflows/build.yml) [![Lint](https://github.com/jihyunlab/eslint-config/actions/workflows/lint.yml/badge.svg)](https://github.com/jihyunlab/eslint-config/actions/workflows/lint.yml)
 
 JihyunLab ESLint config for TypeScript.
 
-## Setup
-
-### 1) Setup regular JihyunLab ESLint config
+## Installation
 
 ```bash
-npm i --save-dev @jihyunlab/eslint-config
+npm i --save-dev @jihyunlab/eslint-config eslint @eslint/js @types/eslint__js typescript typescript-eslint
 ```
 
-or
+## Configuration
 
-```bash
-yarn add --dev @jihyunlab/eslint-config eslint@^8.34.0 @typescript-eslint/eslint-plugin@^5.52.0 @typescript-eslint/parser@^5.52.0 eslint-config-prettier@^8.6.0
-```
-
-### 2) Configure ESLint
-
-.eslintrc.json file structure
-
-    .
-    ├── .eslintrc.json
-    └── ...
-
-Within your .eslintrc.json file:
-```diff
-
-"extends": [
-+ "@jihyunlab/eslint-config"
-]
+Create an <U>eslint.config.mjs</U> and <U>tsconfig.eslint.json</U> files in your project.
 
 ```
-
-```diff
-"parserOptions": [
-+ "project": "./tsconfig.json"
-]
+├─ eslint.config.mjs
+├─ tsconfig.eslint.json
+└─ ...
 ```
 
-Example .eslintrc.json file:
+Edit the <U>eslint.config.mjs</U> file as follows:
 
-```diff
-{
-  "extends": [
-    "@jihyunlab/eslint-config"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig.json"
+```
+import tsEslint from 'typescript-eslint';
+import { jihyunlabEslintConfig } from '@jihyunlab/eslint-config';
+
+export default tsEslint.config(
+  {
+    ignores: ['node_modules', 'dist', 'build', 'coverage'],
+  },
+  {
+    languageOptions: {
+      parserOptions: {
+        project: './tsconfig.eslint.json',
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
+    extends: [...jihyunlabEslintConfig],
   }
-}
+);
 ```
 
-## Additional settings
+Edit the <U>tsconfig.eslint.json</U> file as follows:
 
-Additional settings file structure
-
-    .
-    ├── .vscode                   # Visual Studio Code
-    │   └── extensions.json
-    ├── .eslintignore             # Ignore file(ESLint)
-    └── ...
-
-Additional configuration files can be found on the git page.
-
-https://github.com/jihyunlab/eslint-config
-
-### 1) Ignore file
-
-Example .eslintignore file:
-
-```diff
-/node_modules
-/build
-/dist
 ```
-
-### 2) Visual Studio Code
-
-Within your .vscode/extensions.json file:
-
-```diff
-{
-  "recommendations": [
-+   "dbaeumer.vscode-eslint"
-  ]
-}
-```
-
-## Troubleshooting
-
-### 1) When a peer dependencies package is not installed
-
-```bash
-npm i --save-dev eslint@^8.34.0 @typescript-eslint/eslint-plugin@^5.52.0 @typescript-eslint/parser@^5.52.0 eslint-config-prettier@^8.6.0
-```
-
-### 2) Conflict between ESLint and Prettier configs
-
-Delete Prettier related configs in ESLint.
-
-Within your .eslintrc.json file:
-
-```diff
-"extends": [
-  "@jihyunlab/eslint-config",
-+ "prettier"
-]
-```
-
-### 3) I get this error when running ESLint: "The file must be included in at least one of the projects provided"
-
-Create a tsconfig.eslint.json file
-
-    .
-    ├── tsconfig.eslint.json
-    └── ...
-
-Example tsconfig.eslint.json file:
-
-```diff
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts", "src/**/*.js", "test/**/*.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.cts", "**/*.mts"],
+  "exclude": ["node_modules", "dist", "build", "coverage"]
 }
 ```
-
-Change .eslintrc.json file:
-
-```diff
-"parserOptions": [
-- "project": "./tsconfig.json"
-+ "project": "./tsconfig.eslint.json"
-]
-```
-
-Check out the link below for other detailed TypeScript ESLint errors.
-
-https://typescript-eslint.io/linting/troubleshooting/
 
 ## Credits
 

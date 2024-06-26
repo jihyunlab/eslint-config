@@ -1,8 +1,5 @@
 *
-
-!/index.js
-
+!/dist/**/*
 !/package.json
-
 !/LICENCE
 !/README.md
