@@ -25,6 +25,7 @@ Create the <U>eslint.config.mjs</U> file.
 Edit the <U>eslint.config.mjs</U> file as follows:
 
 ```
+import eslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
 import { jihyunlabEslintConfig } from '@jihyunlab/eslint-config';
 
@@ -42,7 +43,11 @@ export default tsEslint.config(
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
-    extends: [...jihyunlabEslintConfig],
+    extends: [
+      eslint.configs.recommended,
+      ...tsEslint.configs.recommendedTypeChecked,
+      jihyunlabEslintConfig,
+    ],
   }
 );
 ```
