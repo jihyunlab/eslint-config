@@ -13,11 +13,12 @@ npm i --save-dev @jihyunlab/eslint-config eslint @eslint/js @types/eslint__js ty
 
 ## Configuration
 
-Create an <U>eslint.config.mjs</U> and <U>tsconfig.eslint.json</U> files in your project.
+### Configure ESLint
+
+Create the <U>eslint.config.mjs</U> file.
 
 ```
 ├─ eslint.config.mjs
-├─ tsconfig.eslint.json
 └─ ...
 ```
 
@@ -44,6 +45,15 @@ export default tsEslint.config(
     extends: [...jihyunlabEslintConfig],
   }
 );
+```
+
+### Configure TypeScript for ESLint
+
+Create the <U>tsconfig.eslint.json</U> file.
+
+```
+├─ tsconfig.eslint.json
+└─ ...
 ```
 
 Edit the <U>tsconfig.eslint.json</U> file as follows:
