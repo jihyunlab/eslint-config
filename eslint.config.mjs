@@ -1,5 +1,6 @@
 import eslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default tsEslint.config(
   {
@@ -236,6 +237,7 @@ export default tsEslint.config(
           '@typescript-eslint/use-unknown-in-catch-callback-variable': 'off',
         },
       },
+      eslintPluginPrettierRecommended,
     ],
   }
 );
