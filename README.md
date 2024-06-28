@@ -15,14 +15,12 @@ npm i --save-dev @jihyunlab/eslint-config eslint @eslint/js @types/eslint__js ty
 
 ### Configure ESLint
 
-Create the <U>eslint.config.mjs</U> file.
+Create and edit the <U>eslint.config.mjs</U> file.
 
 ```
 ├─ eslint.config.mjs
 └─ ...
 ```
-
-Edit the <U>eslint.config.mjs</U> file as follows:
 
 ```
 import eslint from '@eslint/js';
@@ -54,14 +52,12 @@ export default tsEslint.config(
 
 ### Configure TypeScript for ESLint
 
-Create the <U>tsconfig.eslint.json</U> file.
+Create and edit the <U>tsconfig.eslint.json</U> file.
 
 ```
 ├─ tsconfig.eslint.json
 └─ ...
 ```
-
-Edit the <U>tsconfig.eslint.json</U> file as follows:
 
 ```
 {
