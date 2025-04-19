@@ -1,6 +1,6 @@
 {
   "name": "@jihyunlab/eslint-config",
-  "version": "2.0.8",
+  "version": "2.1.0",
   "description": "JihyunLab ESLint config for TypeScript.",
   "license": "MIT",
   "author": "JihyunLab <info@jihyunlab.com> (https://jihyunlab.com)",
@@ -21,13 +21,12 @@
     "typescript"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.5.0",
-    "@types/eslint__js": "^8.42.3",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.2",
-    "typescript-eslint": "^7.14.1"
+    "@eslint/js": "^9.25.0",
+    "eslint": "^9.25.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1"
   }
 }
