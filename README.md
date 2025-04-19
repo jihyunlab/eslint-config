@@ -8,7 +8,7 @@
 ## Installation
 
 ```bash
-npm i --save-dev @jihyunlab/eslint-config eslint @eslint/js @types/eslint__js typescript typescript-eslint
+npm i --save-dev @jihyunlab/eslint-config eslint @eslint/js typescript typescript-eslint
 ```
 
 ## Configuration
